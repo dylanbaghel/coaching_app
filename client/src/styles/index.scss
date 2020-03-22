@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import './variables';
+
+
+// Base Styles
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box !important;
+}
+
+html {
+    height: 100vh;
+}
+
+body {
+    font-family: $font-stack;
+    line-height: 1.6rem;
+    height: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+#root {
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: $primary-color;
+}
+
+
+.container {
+    max-width: 70%;
+    margin: auto;
+}
+
+img {
+    max-width: 100% !important;
+}
+
+.go-back {
+    font-style: italic;
+    text-decoration: underline;
+    color: $primary-color;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.no-scroll {
+    height: 80%;
+    overflow: hidden !important;
+}
+
+// partials
+@import './components/header';
+@import './components/form';
+@import './components/login';
+@import './components/alert';
+@import './components/dashboard';
+@import './components/card';
+@import './components/pagination';
+@import './components/search';
+@import './components/images-manager';
+@import './components/add-student-page';
+@import './components/view-student';
+@import './components/modal';
+@import './components/loading';
+@import './components/not-found';

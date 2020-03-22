@@ -1,0 +1,39 @@
+.images-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+}
+
+.image-manager__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-manager__container h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.image-manager__action label {
+    display: block;
+}
+
+.single-image {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 50%;
+    margin: 0.5rem;
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+}
+
+.single-image:hover {
+    transform: scale(1.1);
+}
+
+.active-image {
+    border: red 3px solid;
+}

@@ -1,0 +1,85 @@
+.student-details__container {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.student-details__main {
+    flex: 2;
+    margin-right: 0.5rem;
+}
+
+.student-details__sidebar {
+    flex: 1;
+    margin-left: 0.5rem;
+}
+
+.student-details__sidebar div:first-child {
+    height: 300px;
+    width: 100%;
+}
+
+.student-details__sidebar img {
+    height: 100%;
+    width: 100%;
+}
+
+
+.student-details__action {
+    display: flex;
+    margin-top: 1rem;
+}
+
+
+.student-details__action button,
+.student-details__action a {
+    flex: 1;
+}
+
+
+.student-details__list {
+    list-style: none;
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+
+.student-details__list li {
+    border-bottom: 1px solid #333;
+    padding: 0.75rem 0;
+}
+
+.student-details__list li:last-child {
+    border: none;
+}
+
+.container__header {
+    margin-top: 1.5rem;
+}
+
+@media(max-width: 768px) {
+    .student-details__container {
+        flex-direction: column-reverse;
+    }
+
+    .l-heading {
+        font-size: 1.8rem;
+    }
+
+    .student-details__main {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .student-details__sidebar {
+        width: 100%;
+        margin: 1rem 0;
+    }
+
+    .student-details__container {
+        margin-top: 0.3rem;
+    }
+
+    .l-heading {
+        text-align: center;
+    }
+}

@@ -1,0 +1,39 @@
+.add-student-page__container {
+    margin-top: 2rem;
+}
+
+.student__form {
+    margin-top: 2rem;
+    border: 1px solid #ccc;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.choose-image {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.choose-image__preview {
+    position: relative;
+}
+
+.choose-image__preview img {
+    margin-bottom: 1rem;
+    width: 150px;
+    height: 150px;
+    // border-radius: 50%;
+}
+
+.remove-image {
+    position: absolute;
+    top: 0px;
+    right: -5px;
+    font-size: 1.6rem;
+    color: #fff;
+    background-color: $primary-color;
+    padding: 0.2rem;
+    cursor: pointer;
+}

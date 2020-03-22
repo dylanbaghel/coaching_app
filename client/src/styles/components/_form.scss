@@ -1,0 +1,52 @@
+.form-control {
+    width: 100%;
+    outline: none;
+    padding: 0.5rem;
+    border: 1px solid #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    background-color: #c1c1c1;
+    color: #000;
+    text-align: center;
+}
+
+.btn[disabled] {
+  background-color: #cccccc;
+  color: #666666;
+  cursor: wait;
+}
+
+.btn a {
+    color: #000;
+}
+
+.error-label {
+    color: red;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+.btn--sm {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+}
+
+
+.btn--primary {
+    background: $secondary-color;
+    color: #fff;
+}
+
+.btn--danger {
+    background-color: #D63031;
+    color: #fff;
+}
