@@ -24,7 +24,6 @@ export const startAddImage = (imageData) => dispatch => {
     })
     .then(res => {
         dispatch(addImage(res.data.image));
-        console.log(res.data);
     })
     .catch(err => {
         console.log(err.response);

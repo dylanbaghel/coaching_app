@@ -57,12 +57,12 @@ class Dashboard extends React.Component {
         return (
             <Layout>
                 <Loading loading={this.state.isLoading} />
-                <div className={this.state.isLoading ? "container no-scroll" : "container"}>
+                <div className="container height-75">
                     <div className="dashboard__header">
                         <h1 className="dashboard__header__title">Dashboard</h1>
-                        <button className="btn btn--primary" onClick={this.props.startLogout}>Logout</button>
+                        <button className="btn btn--secondary" onClick={this.props.startLogout}>Logout</button>
                     </div>
-                    <Link className="btn dashboard-btn" to="/admin/students/add">Add Student</Link>
+                    <Link className="btn btn--primary dashboard-btn" to="/admin/students/add">Add Student</Link>
                     <Search 
                         onValueChange={(value) => {
                             this.setState(() => {
@@ -74,7 +74,7 @@ class Dashboard extends React.Component {
                     />
                     <div>
                         {this._renderStudentsList()}
-                        {this.props.studentsData.students && <Pagination
+                        {(this.props.studentsData.students && this.props.studentsData.totalPage > 1) && <Pagination
                             innerClass="innerClass"
                             itemClass="itemClass"
                             linkClass="linkClass"

@@ -40,8 +40,11 @@
     font-size: 0.9rem;
 }
 
-
 .btn--primary {
+    background: $primary-color;
+    color: #fff;
+}
+.btn--secondary {
     background: $secondary-color;
     color: #fff;
 }

@@ -25,7 +25,6 @@ class ImageManager extends React.Component {
         this.setState(() => ({ isLoading: true }))
         this.props.startSetImages()
             .then(data => {
-                console.log('images', data);
                 this.setState(() => ({ isLoading: false }));
             })
             .catch(err => {
@@ -39,7 +38,6 @@ class ImageManager extends React.Component {
         this.setState(() => ({ isSubmitting: true }));
         const data = new FormData();
         data.append('image', e.target.files[0]);
-        console.log(data)
         this.props.startAddImage(data)
             .then(() => {
                 this.setState(() => ({ isSubmitting: false }));
@@ -100,6 +98,9 @@ class ImageManager extends React.Component {
         if (this.state.isLoading) {
             return <h1>Loading...</h1>
         }
+        if (this.props.images.length < 1) {
+            return <h2>No Images Uploaded</h2>
+        }
         return this.props.images.map(image => {
             let classNames = 'single-image';
             if (image._id === this.state.selectedImage._id) {
@@ -113,7 +114,7 @@ class ImageManager extends React.Component {
 
     render() {
         return (
-            <section className="container image-manager__container" style={{ marginTop: '2rem' }}>
+            <section className="container image-manager__container height-75" style={{ marginTop: '2rem' }}>
                 {this.state.errors.text && <Alert
                     message={this.state.errors.text}
                     status="danger"
@@ -123,18 +124,18 @@ class ImageManager extends React.Component {
                         });
                     }}
                 />}
-                <h1>Image Manager</h1>
+                <h1 className="image-manager__title">Image Manager</h1>
                 <div className="image-manager__action">
                     {!this.state.isEdit ? (
                         <React.Fragment>
-                            <label className="btn" htmlFor="image">{this.state.isSubmitting ? 'Uploading...' : 'Add Image'}</label>
+                            <label disabled={this.state.isSubmitting} className="btn" htmlFor="image">{this.state.isSubmitting ? 'Uploading...' : 'Add Image'}</label>
                             <input disabled={this.state.isSubmitting} id="image" style={{ display: "none" }} type="file" onChange={this.handleUploadImageChange} />
                         </React.Fragment>
                     ) : (
-                            <React.Fragment>
+                            <div className="image__actions">
                                 <button disabled={this.state.isSubmitting} className="btn btn--danger" onClick={this.onRemoveImage}>Delete</button>
                                 <button disabled={this.state.isSubmitting} className="btn " onClick={this.onCancelTask}>Cancel</button>
-                            </React.Fragment>
+                            </div>
                         )}
                 </div>
                 <div className="images-container">

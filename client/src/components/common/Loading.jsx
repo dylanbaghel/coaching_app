@@ -2,7 +2,6 @@ import React from 'react';
 import preloader from '../../assets/loader.gif';
 
 const Loading = (props) => {
-    console.log(props);
     let classNames = '';
     if (props.loading) {
         classNames += 'loader';

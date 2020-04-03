@@ -31,29 +31,28 @@ class EditStudentPage extends React.Component {
     render() {
         return (
             <Layout>
-                <Loading loading={this.state.isLoading} />
-                <section className="container add-student-page__container">
-                    <Link className="go-back" to={`/admin/students/${this.props.match.params.id}`}>Go Back</Link>
-                    <h1>Edit Student</h1>
-                    <StudentForm
-                        isSubmitting={this.state.isSubmitting}
-                        onSubmit={(data) => {
-                            console.log('data', data);
-                            this.setState(() => ({ isSubmitting: true }));
-                            this.props.startUpdateStudent(this.props.match.params.id, data)
-                                .then(res => {
-                                    this.setState(() => ({ isSubmitting: false }));
-                                    console.log('responseeee', res);
-                                    this.props.history.replace(`/admin/students/${this.props.match.params.id}`);
-                                })
-                                .catch(err => {
-                                    this.setState(() => ({ isSubmitting: false }));
-                                    console.log('ERrror: ', err);
-                                });
-                        }}
-                        student={this.props.currentStudent}
-                    />
-                </section>
+                {this.state.isLoading ? <Loading loading={this.state.isLoading} /> : <section className="container add-student-page__container">
+                <Link className="go-back" to={`/admin/students/${this.props.match.params.id}`}>Go Back</Link>
+                <h1>Edit Student</h1>
+                <StudentForm
+                    isSubmitting={this.state.isSubmitting}
+                    onSubmit={(data) => {
+                        this.setState(() => ({ isSubmitting: true }));
+                        this.props.startUpdateStudent(this.props.match.params.id, data)
+                            .then(res => {
+                                this.setState(() => ({ isSubmitting: false }));
+                                console.log('responseeee', res);
+                                this.props.history.replace(`/admin/students/${this.props.match.params.id}`);
+                            })
+                            .catch(err => {
+                                this.setState(() => ({ isSubmitting: false }));
+                                console.log('ERrror: ', err);
+                            });
+                    }}
+                    student={this.props.currentStudent}
+                />
+            </section>}
+                
             </Layout>
         );
     }

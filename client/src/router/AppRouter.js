@@ -11,6 +11,7 @@ import AddStudentPage from '../components/admin/AddStudentPage';
 import ViewStudent from '../components/admin/ViewStudent';
 import EditStudentPage from '../components/admin/EditStudentPage';
 import NotFoundPage from '../components/admin/NotFoundPage';
+import Settings from '../components/admin/Settings';
 
 export const history = createBrowserHistory();
 
@@ -21,6 +22,7 @@ const AppRouter = () => {
                 <Redirect exact={true} path="/" to="/admin/login"/>
                 <PublicRoute exact={true} path="/admin/login" component={Login}/>
                 <AdminRoute exact={true} path="/admin" component={Dashboard}/>
+                <AdminRoute exact={true} path="/admin/settings" component={Settings} />
                 <AdminRoute exact={true} path="/admin/images" component={ImageManagerPage}/>
                 <AdminRoute exact={true} path="/admin/students/add" component={AddStudentPage} />
                 <AdminRoute exact={true} path="/admin/students/edit/:id" component={EditStudentPage}/>

@@ -10,10 +10,16 @@ import configureStore from './store/store';
 import setAuthToken from './utils/setAuthToken';
 
 import { setUser, removeUser } from './actions/authActions';
+import { setTheme } from './actions/themeActions';
 
 const store = configureStore();
 const token = localStorage.getItem('toka');
+const theme = localStorage.getItem('theme');
 
+
+if (theme) {
+    store.dispatch(setTheme(JSON.parse(theme)));
+}
 
 if (token) {
     const decoded = jwt_decode(token);

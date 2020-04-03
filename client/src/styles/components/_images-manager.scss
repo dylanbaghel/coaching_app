@@ -37,3 +37,9 @@
 .active-image {
     border: red 3px solid;
 }
+
+@media (max-width: 768px) {
+    .image-manager__container h1 {
+        font-size: 2rem;
+    }
+}

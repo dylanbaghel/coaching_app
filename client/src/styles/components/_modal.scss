@@ -1,0 +1,30 @@
+.Modal {
+    background-color: white;
+    outline: none;
+    border: $primary-color solid 1px;
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+}
+
+.Modal .btn-close {
+    margin-top: 5rem;
+    align-content: center;
+}
+
+@media (max-width: 768px) {
+    .Modal > div .image-manager__title {
+        font-size: 1.5rem;
+    }
+
+    .Modal > div .images-container img {
+        width: 50px;
+        height: 50px;
+        margin: 0.3rem;
+    }
+
+    .Modal > div .image__actions {
+        display: flex;
+    }
+}

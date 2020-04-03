@@ -8,3 +8,5 @@ export const SET_IMAGES = 'SET_IMAGES';
 export const REMOVE_IMAGE = 'REMOVE_IMAGE';
 export const ADD_IMAGE = 'ADD_IMAGE';
 export const SET_CURRENT_STUDENT = 'SET_CURRENT_STUDENT';
+export const SET_THEME = 'SET_THEME';
+export const RESET_THEME = 'RESET_THEME';

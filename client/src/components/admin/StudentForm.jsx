@@ -188,7 +188,7 @@ class StudentForm extends React.Component {
                     }}
                 />
                 {(this.state.selectedImage) && <button className="btn" onClick={this.handleSelectImage}>Select</button>}
-                <button onClick={this.handleCloseModal} className="btn">Close</button>
+                <button onClick={this.handleCloseModal} className="btn btn-close">Close</button>
             </div>
         );
     }
@@ -263,6 +263,7 @@ class StudentForm extends React.Component {
                 </div>
                 <button disabled={this.props.isSubmitting} className="btn btn--primary">{this.props.student ? 'Update' : 'Add'}</button>
                 <Modal
+                    className="Modal"
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.handleCloseModal}
                     children={this._renderModalContent()}

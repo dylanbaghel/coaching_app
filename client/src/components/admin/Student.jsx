@@ -18,7 +18,7 @@ const Student = (props) => {
                 <p>Email: {props.student.email}</p>
                 <button onClick={() => {
                     history.push(`/admin/students/${props.student._id}`);
-                }} className="btn btn--primary">View Details</button>
+                }} className="btn btn--secondary">View Details</button>
             </div>
         </div>
     );

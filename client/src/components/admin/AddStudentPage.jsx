@@ -19,9 +19,8 @@ const AddStudentPage = (props) => {
                     onSubmit={(data) => {
                         setIsSubmitting(true);
                         props.startAddStudents(data)
-                            .then(res => {
+                            .then((_) => {
                                 setIsSubmitting(false);
-                                console.log('Response: ', res);
                                 props.history.push('/admin');
                             })
                             .catch(err => {
